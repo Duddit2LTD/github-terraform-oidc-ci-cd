@@ -20,4 +20,5 @@ resource "azuread_application_federated_identity_credential" "github_oidc" {
   audiences             = [local.default_audience_name]
   issuer                = local.github_issuer_url
   subject               = "repo:${var.github_organisation_target}/${github_repository.example.name}:environment:${each.value}"
+  
 }
